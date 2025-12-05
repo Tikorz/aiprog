@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
 import { useState } from "react";
+import { signOut } from "next-auth/react";
 
 export default function DashboardPage() {
   const [messages, setMessages] = useState<Array<{ role: string; content: string }>>([
@@ -55,8 +56,10 @@ export default function DashboardPage() {
               <Button variant="ghost" size="sm">
                 Settings
               </Button>
-              <Button variant="ghost" size="sm">
-                Sign Out
+              <Button variant="ghost" size="sm" asChild>
+                <Link href="/api/simple-auth?action=signout">
+                  Sign Out
+                </Link>
               </Button>
             </div>
           </div>

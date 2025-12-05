@@ -2,11 +2,9 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import Link from "next/link";
 
-export default function LoginPage() {
+export default function SignupPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-black via-zinc-950 to-black flex items-center justify-center px-6">
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#18181b_1px,transparent_1px),linear-gradient(to_bottom,#18181b_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_110%)] opacity-20" />
-
       <Card className="relative w-full max-w-md p-8 bg-zinc-950/80 border-white/10 backdrop-blur-xl glow">
         <div className="text-center space-y-6">
           <Link href="/" className="inline-block">
@@ -14,18 +12,21 @@ export default function LoginPage() {
           </Link>
 
           <div className="space-y-2">
-            <h2 className="text-2xl font-bold text-white">Welcome Back</h2>
-            <p className="text-zinc-400">Sign in to continue building</p>
+            <h2 className="text-2xl font-bold text-white">Get Started</h2>
+            <p className="text-zinc-400">Sign up to start building with AI</p>
           </div>
 
           <div className="space-y-4 pt-4">
-            <Button
-              size="lg"
-              className="w-full gap-3 glow-hover"
-              variant="outline"
-              asChild
-            >
-              <Link href="/api/simple-auth?action=signin">
+              <Button
+                type="submit"
+                size="lg"
+                className="w-full gap-3 glow-hover"
+                variant="outline"
+              >
+                <Link href="/api/simple-auth?action=signin">
+    <svg className="w-5 h-5" viewBox="0 0 24 24">...</svg>
+    Continue with Google
+  
               <svg className="w-5 h-5" viewBox="0 0 24 24">
                 <path
                   fill="currentColor"
@@ -46,32 +47,13 @@ export default function LoginPage() {
               </svg>
               Continue with Google
               </Link>
-            </Button>
-
-            <div className="relative">
-              <div className="absolute inset-0 flex items-center">
-                <div className="w-full border-t border-white/10" />
-              </div>
-              <div className="relative flex justify-center text-xs uppercase">
-                <span className="bg-zinc-950 px-2 text-zinc-500">Or</span>
-              </div>
-            </div>
+              </Button>
+          
 
             <Button size="lg" className="w-full" variant="ghost" asChild>
-              <Link href="/signup">Create New Account</Link>
+              <Link href="/login">Already have an account?</Link>
             </Button>
           </div>
-
-          <p className="text-xs text-zinc-500 pt-4">
-            By continuing, you agree to our{" "}
-            <Link href="/terms" className="underline hover:text-white">
-              Terms
-            </Link>{" "}
-            and{" "}
-            <Link href="/privacy" className="underline hover:text-white">
-              Privacy Policy
-            </Link>
-          </p>
         </div>
       </Card>
     </div>
